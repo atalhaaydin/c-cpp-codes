@@ -1,0 +1,70 @@
+// quotes from some books etc...
+
+You should make all one-parameter constructors
+explicit to avoid behind-the-scenes type conversions
+
+isEmpty is an accessor, while makeEmpty is a mutator.
+
+By default, all member functions are mutators. To make a
+member function an accessor, we must add the keyword const after
+the closing parenthesis that ends the parameter type list.
+
+#ifndef _HEADER_
+#define _HEADER_
+...
+#endif
+
+ClassName::member . The :: is called the scope resolution operator.
+
+STL (standart template lib)treat arrays and strings as first-class objects
+
+Two string objects can be compared with == , < , and so
+on. Both vector and string can be copied with = .
+
+int sum = 0;
+for( auto x : squares ) | squares is vector
+sum += x;
+
+for( auto & x : arr ) // works | arr is array
+++x;
+
+IntCell *m;
+    The * indicates that m is a pointer variable; it is allowed
+    to point at an IntCell object
+
+Dynamic Object Creation
+    m = new IntCell( );
+    m = new IntCell;
+
+two pointer variables are equal if they point at the same object
+
+Accessing Members of an Object through a Pointer
+    If a pointer variable points at a class type, then a (visible) member 
+    of the object being pointed at can be accessed via the -> operator
+
+Address-of Operator (&)
+    This operator returns the memory location where an object 
+    
+An lvalue is an expression that identifies a non-temporary object.
+An rvalue is an expression that identifies a temporary object or is 
+a value (such as a literal constant) not associated with any object.
+
+In C++11, an rvalue reference is declared by placing an && 
+after some type.
+
+std::swap and std::move
+
+the copy constructor and copy assignment operator both copy the value of
+the pointer rather than the objects being pointed at This is shallow copy.
+
+deep copy, is clone of the entire object is made
+
+int *arr2 = new int[ n ];
+delete [ ] arr2;
+
+// Define an output operator for Square
+ostream & operator<< ( ostream & out, const Square & rhs )
+{
+rhs.print( out );
+return out;
+}
